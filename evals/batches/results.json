@@ -1,0 +1,146 @@
+{
+  "status": "completed",
+  "count": 2,
+  "limit": 100,
+  "duration_ms": 7586,
+  "summary": {
+    "consistent": 2,
+    "flagged": 0,
+    "errors": 0
+  },
+  "results": [
+    {
+      "id": "generated-rye-whiskey",
+      "application_id": "generated-rye-whiskey",
+      "status": "consistent",
+      "duration_ms": 3916,
+      "verdict": {
+        "Status": "consistent",
+        "Confidence": 1,
+        "Fields": [
+          {
+            "Field": "brand",
+            "Expected": "POM CREEK DISTILLING COMPANY, LLC",
+            "Extracted": "POM CREEK DISTILLING COMPANY, LLC",
+            "MatchType": "fuzzy",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "class_type",
+            "Expected": "Rye Whiskey",
+            "Extracted": "STRAIGHT RYE WHISKEY",
+            "MatchType": "fuzzy",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "net_contents",
+            "Expected": "750 mL",
+            "Extracted": "750 mL",
+            "MatchType": "format",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "abv",
+            "Expected": "45% ALC/VOL (90 Proof)",
+            "Extracted": "45% ALC/VOL (90 Proof)",
+            "MatchType": "format",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "government_warning",
+            "Expected": "GOVERNMENT WARNING",
+            "Extracted": "GOVERNMENT WARNING",
+            "MatchType": "warning",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "name_address",
+            "Expected": "POM CREEK DISTILLING COMPANY, LLC PURCELLVILLE, VA",
+            "Extracted": "POMCREEK HOLIC DISTILLING COMPANY, LLC PURCELLVILLE, VA",
+            "MatchType": "name_address",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          }
+        ]
+      }
+    },
+    {
+      "id": "generated-apple-brandy",
+      "application_id": "generated-apple-brandy",
+      "status": "consistent",
+      "duration_ms": 3666,
+      "verdict": {
+        "Status": "consistent",
+        "Confidence": 1,
+        "Fields": [
+          {
+            "Field": "brand",
+            "Expected": "POM CREEK DISTILLING COMPANY, LLC",
+            "Extracted": "POM CREEK DISTILLING COMPANY, LLC",
+            "MatchType": "fuzzy",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "class_type",
+            "Expected": "Apple Brandy",
+            "Extracted": "POMAPPLEBRANDY",
+            "MatchType": "fuzzy",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "net_contents",
+            "Expected": "750 mL",
+            "Extracted": "750 mL",
+            "MatchType": "format",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "abv",
+            "Expected": "40% ALC/VOL (80 Proof)",
+            "Extracted": "40% ALC/VOL (80 Proof)",
+            "MatchType": "format",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "government_warning",
+            "Expected": "GOVERNMENT WARNING",
+            "Extracted": "GOVERNMENT WARNING",
+            "MatchType": "warning",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          },
+          {
+            "Field": "name_address",
+            "Expected": "POM CREEK DISTILLING COMPANY, LLC LOUDOUN COUNTY, VA",
+            "Extracted": "POM CREEK DISTILLING COMPANY, LLC DISTILLEDWITHAPPLES NATURALLYDISTILLEDANDBOTTLED LOUDOUN COUNTY, VA",
+            "MatchType": "name_address",
+            "Score": 1,
+            "Pass": true,
+            "Diff": ""
+          }
+        ]
+      }
+    }
+  ]
+}
+

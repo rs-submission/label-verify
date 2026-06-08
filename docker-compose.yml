@@ -1,0 +1,57 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: labelverify
+      POSTGRES_PASSWORD: labelverify
+      POSTGRES_DB: labelverify
+    ports:
+      - "5432:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+  ocr:
+    build:
+      context: ./services/ocr
+    environment:
+      PORT: "8001"
+    ports:
+      - "8001:8001"
+
+  judge:
+    build:
+      context: ./services/judge
+    environment:
+      JUDGE_PROVIDER: ollama
+      JUDGE_BASE_URL: http://host.docker.internal:11434
+      JUDGE_MODEL: gemma4:latest
+      JUDGE_TIMEOUT_MS: "2500"
+    ports:
+      - "8002:8002"
+
+  api:
+    build:
+      context: ./services/api
+    environment:
+      DATABASE_URL: postgres://labelverify:labelverify@db:5432/labelverify?sslmode=disable
+      OCR_ADDR: http://ocr:8001
+      MIGRATIONS_DIR: /app/migrations
+      PORT: "8080"
+      VERIFY_TIMEOUT_MS: "5000"
+      LLM_ENABLED: "false"
+      LLM_MODE: shadow
+      LLM_ADDR: http://judge:8002
+      LLM_MODEL: gemma4:latest
+      LLM_TIMEOUT_MS: "2500"
+      LLM_ALLOWED_FIELDS: brand,class_type
+      LLM_DENIED_FIELDS: abv,net_contents,government_warning,name_address
+      LLM_MIN_ELIGIBLE_FAILING_FIELDS: "1"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+      - ocr
+      - judge
+
+volumes:
+  db-data:

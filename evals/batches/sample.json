@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": "generated-rye-whiskey",
+      "application_id": "generated-rye-whiskey",
+      "image": "../images/generated_rye_whiskey.png",
+      "application": {
+        "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+        "ClassType": "Rye Whiskey",
+        "NetContents": "750 mL",
+        "ABV": "45% ALC/VOL (90 Proof)",
+        "GovernmentWarning": "GOVERNMENT WARNING",
+        "NameAndAddress": "POM CREEK DISTILLING COMPANY, LLC PURCELLVILLE, VA",
+        "ForeignBlocks": [],
+        "DeclaredLanguages": ["en"]
+      }
+    },
+    {
+      "id": "generated-apple-brandy",
+      "application_id": "generated-apple-brandy",
+      "image": "../images/generated_apple_brandy.png",
+      "application": {
+        "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+        "ClassType": "Apple Brandy",
+        "NetContents": "750 mL",
+        "ABV": "40% ALC/VOL (80 Proof)",
+        "GovernmentWarning": "GOVERNMENT WARNING",
+        "NameAndAddress": "POM CREEK DISTILLING COMPANY, LLC LOUDOUN COUNTY, VA",
+        "ForeignBlocks": [],
+        "DeclaredLanguages": ["en"]
+      }
+    }
+  ]
+}

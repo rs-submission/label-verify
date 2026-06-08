@@ -1,0 +1,50 @@
+[
+  {
+    "id": "generated_rye_whiskey",
+    "image": "evals/images/generated_rye_whiskey.png",
+    "application": {
+      "ID": "generated-rye-whiskey",
+      "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+      "ClassType": "Rye Whiskey",
+      "NetContents": "750 mL",
+      "ABV": "45% ALC/VOL (90 Proof)",
+      "GovernmentWarning": "GOVERNMENT WARNING",
+      "ForeignBlocks": [],
+      "DeclaredLanguages": [
+        "en"
+      ]
+    }
+  },
+  {
+    "id": "generated_blueberry_liqueur",
+    "image": "evals/images/generated_blueberry_liqueur.png",
+    "application": {
+      "ID": "generated-blueberry-liqueur",
+      "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+      "ClassType": "Blueberry Liqueur/Cordial",
+      "NetContents": "375 mL",
+      "ABV": "25% ALC/VOL (50 Proof)",
+      "GovernmentWarning": "GOVERNMENT WARNING",
+      "ForeignBlocks": [],
+      "DeclaredLanguages": [
+        "en"
+      ]
+    }
+  },
+  {
+    "id": "generated_apple_brandy",
+    "image": "evals/images/generated_apple_brandy.png",
+    "application": {
+      "ID": "generated-apple-brandy",
+      "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+      "ClassType": "Apple Brandy",
+      "NetContents": "750 mL",
+      "ABV": "40% ALC/VOL (80 Proof)",
+      "GovernmentWarning": "GOVERNMENT WARNING",
+      "ForeignBlocks": [],
+      "DeclaredLanguages": [
+        "en"
+      ]
+    }
+  }
+]

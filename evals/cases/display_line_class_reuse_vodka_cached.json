@@ -1,0 +1,33 @@
+{
+  "id": "display_line_class_reuse_vodka_cached",
+  "description": "Submitted brand display line contains the single-word class; class/type must use that line instead of unrelated production text.",
+  "application": {
+    "ID": "display-line-class-reuse-vodka",
+    "Brand": "POM VODKA",
+    "ClassType": "Vodka",
+    "NetContents": "750 mL",
+    "ABV": "40% Alc./Vol. (80 Proof)",
+    "GovernmentWarning": "GOVERNMENT WARNING",
+    "ForeignBlocks": [],
+    "DeclaredLanguages": ["en"]
+  },
+  "ocr": {
+    "regions": [
+      {"text": "POM VODKA", "confidence": 0.99, "bbox": [10, 10, 220, 40]},
+      {"text": "DISTILLEDFROMGRAIN", "confidence": 0.97, "bbox": [10, 140, 320, 30]},
+      {"text": "40% ALC. BY VOL. (80 PR00F)", "confidence": 0.99, "bbox": [10, 210, 420, 30]},
+      {"text": "GOVERNMENT", "confidence": 0.99, "bbox": [10, 260, 160, 30]},
+      {"text": ": (1) According to the Surgeon General, women birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive car or operate machinery, and may cause health problems.", "confidence": 0.96, "bbox": [10, 320, 900, 80]}
+    ]
+  },
+  "expected": {
+    "status": "flagged",
+    "fields": {
+      "brand": "pass",
+      "class_type": "pass",
+      "net_contents": "fail",
+      "abv": "pass",
+      "government_warning": "fail"
+    }
+  }
+}

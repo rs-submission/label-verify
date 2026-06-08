@@ -1,0 +1,80 @@
+{
+  "id": "synthetic_consistent_cached",
+  "description": "Synthetic cached OCR case where all required fields are present.",
+  "application": {
+    "ID": "synthetic-consistent",
+    "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+    "ClassType": "Cherry Liqueur/Cordial",
+    "NetContents": "750 mL",
+    "ABV": "25% ALC/VOL(50 Proof)",
+    "GovernmentWarning": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "ForeignBlocks": [],
+    "DeclaredLanguages": [
+      "en"
+    ]
+  },
+  "ocr": {
+    "regions": [
+      {
+        "text": "POM CHERRY CORDIAL",
+        "confidence": 0.99,
+        "bbox": [
+          10.0,
+          10.0,
+          400.0,
+          40.0
+        ]
+      },
+      {
+        "text": "POMCREEKDISTILLING COMPANY,LLC",
+        "confidence": 0.98,
+        "bbox": [
+          10.0,
+          110.0,
+          420.0,
+          25.0
+        ]
+      },
+      {
+        "text": "750 mL",
+        "confidence": 0.99,
+        "bbox": [
+          10.0,
+          160.0,
+          100.0,
+          25.0
+        ]
+      },
+      {
+        "text": "25% ALC.BYVOL. (50 PR00F)",
+        "confidence": 0.94,
+        "bbox": [
+          10.0,
+          200.0,
+          260.0,
+          25.0
+        ]
+      },
+      {
+        "text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+        "confidence": 0.99,
+        "bbox": [
+          10.0,
+          260.0,
+          300.0,
+          25.0
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "status": "consistent",
+    "fields": {
+      "brand": "pass",
+      "class_type": "pass",
+      "net_contents": "pass",
+      "abv": "pass",
+      "government_warning": "pass"
+    }
+  }
+}

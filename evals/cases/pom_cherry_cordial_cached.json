@@ -1,0 +1,110 @@
+{
+  "id": "pom_cherry_cordial_cached",
+  "description": "Cherry cordial front-label OCR cache: semantic fields pass, required missing fields fail.",
+  "application": {
+    "ID": "pom-cherry-cordial",
+    "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+    "ClassType": "Cherry Liqueur/Cordial",
+    "NetContents": "750 mL",
+    "ABV": "25% ALC/VOL(50 Proof)",
+    "GovernmentWarning": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "ForeignBlocks": [],
+    "DeclaredLanguages": [
+      "en"
+    ]
+  },
+  "ocr": {
+    "regions": [
+      {
+        "text": "POM CHERRY CORDIAL",
+        "confidence": 0.956,
+        "bbox": [
+          7.0,
+          11.0,
+          1218.0,
+          156.0
+        ]
+      },
+      {
+        "text": "DISTILLEDWITHCHERRIES",
+        "confidence": 0.993,
+        "bbox": [
+          600.0,
+          914.0,
+          487.0,
+          30.0
+        ]
+      },
+      {
+        "text": "NATURALLYDISTILLEDANDBOTTLED",
+        "confidence": 0.99,
+        "bbox": [
+          417.0,
+          1009.0,
+          672.0,
+          31.0
+        ]
+      },
+      {
+        "text": "IN LOUDOUNCOUNTY,VAFROMHIGHEST QUALITY",
+        "confidence": 0.959,
+        "bbox": [
+          188.0,
+          1052.0,
+          902.0,
+          35.0
+        ]
+      },
+      {
+        "text": "INGREDIENTS",
+        "confidence": 0.994,
+        "bbox": [
+          841.0,
+          1097.0,
+          250.0,
+          33.0
+        ]
+      },
+      {
+        "text": "POMCREEKDISTILLING COMPANY,LLC",
+        "confidence": 0.966,
+        "bbox": [
+          379.0,
+          1294.0,
+          711.0,
+          34.0
+        ]
+      },
+      {
+        "text": "PURCELLVILLE,VA",
+        "confidence": 0.975,
+        "bbox": [
+          753.0,
+          1339.0,
+          336.0,
+          33.0
+        ]
+      },
+      {
+        "text": "25% ALC.BYVOL. (50 PR00F)",
+        "confidence": 0.906,
+        "bbox": [
+          552.0,
+          1470.0,
+          536.0,
+          38.0
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "status": "flagged",
+    "fields": {
+      "brand": "pass",
+      "class_type": "pass",
+      "net_contents": "fail",
+      "abv": "pass",
+      "government_warning": "fail"
+    }
+  }
+}

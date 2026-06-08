@@ -1,0 +1,90 @@
+{
+  "id": "single_malt_taxonomy_cached",
+  "description": "TTB designation taxonomy accepts explicit Single Malt display evidence while ignoring ingredient-only support.",
+  "application": {
+    "ID": "single-malt-taxonomy",
+    "Brand": "POM SINGLE MALT",
+    "ClassType": "Single Malt Whiskey",
+    "NetContents": "750 mL",
+    "ABV": "46% ALC/VOL (92 Proof)",
+    "GovernmentWarning": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "ForeignBlocks": [],
+    "DeclaredLanguages": [
+      "en"
+    ]
+  },
+  "ocr": {
+    "regions": [
+      {
+        "text": "POM SINGLE MALT",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          10,
+          360,
+          40
+        ]
+      },
+      {
+        "text": "100% MALTED BARLEY",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          70,
+          360,
+          30
+        ]
+      },
+      {
+        "text": "POM CREEK DISTILLING COMPANY, LLC",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          120,
+          700,
+          30
+        ]
+      },
+      {
+        "text": "750 mL",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          170,
+          120,
+          30
+        ]
+      },
+      {
+        "text": "46% ALC/VOL (92 Proof)",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          220,
+          360,
+          30
+        ]
+      },
+      {
+        "text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          270,
+          360,
+          30
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "status": "consistent",
+    "fields": {
+      "brand": "pass",
+      "class_type": "pass",
+      "net_contents": "pass",
+      "abv": "pass",
+      "government_warning": "pass"
+    }
+  }
+}

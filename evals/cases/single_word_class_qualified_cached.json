@@ -1,0 +1,80 @@
+{
+  "id": "single_word_class_qualified_cached",
+  "description": "Single-word submitted class appears on-label with common class qualifiers; richer class text must not false-flag.",
+  "application": {
+    "ID": "single-word-class-qualified",
+    "Brand": "POM CREEK DISTILLING COMPANY, LLC",
+    "ClassType": "Bourbon",
+    "NetContents": "750 mL",
+    "ABV": "45% ALC/VOL (90 Proof)",
+    "GovernmentWarning": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+    "ForeignBlocks": [],
+    "DeclaredLanguages": [
+      "en"
+    ]
+  },
+  "ocr": {
+    "regions": [
+      {
+        "text": "KENTUCKY STRAIGHT BOURBON WHISKEY",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          10,
+          620,
+          40
+        ]
+      },
+      {
+        "text": "POM CREEK DISTILLING COMPANY, LLC",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          110,
+          700,
+          30
+        ]
+      },
+      {
+        "text": "750 mL",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          160,
+          120,
+          30
+        ]
+      },
+      {
+        "text": "45% ALC/VOL (90 Proof)",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          210,
+          360,
+          30
+        ]
+      },
+      {
+        "text": "GOVERNMENT WARNING: (1) According to the Surgeon General, women should not drink alcoholic beverages during pregnancy because of the risk of birth defects. (2) Consumption of alcoholic beverages impairs your ability to drive a car or operate machinery, and may cause health problems.",
+        "confidence": 0.99,
+        "bbox": [
+          10,
+          260,
+          360,
+          30
+        ]
+      }
+    ]
+  },
+  "expected": {
+    "status": "consistent",
+    "fields": {
+      "brand": "pass",
+      "class_type": "pass",
+      "net_contents": "pass",
+      "abv": "pass",
+      "government_warning": "pass"
+    }
+  }
+}

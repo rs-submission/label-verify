@@ -1,0 +1,11 @@
+{
+  "regions": [
+    {
+      "text": "GOVERNMENT WARNING",
+      "confidence": 0.97,
+      "bbox": [0.1, 0.62, 0.55, 0.08]
+    }
+  ],
+  "elapsed_ms": 740
+}
+

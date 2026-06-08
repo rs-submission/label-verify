@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TTB Label Verify</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="topbar">
+        <div>
+          <h1>Label Verification</h1>
+          <p id="statusText" class="status-text">Ready</p>
+        </div>
+        <div class="topbar-actions">
+          <button id="manageAppsButton" type="button" class="ghost-button">Manage Applications</button>
+          <div id="verdictBadge" class="verdict-badge idle">No run</div>
+        </div>
+      </header>
+
+      <nav class="mode-tabs" aria-label="Verification mode">
+        <button id="singleModeButton" type="button" class="active">Single Label</button>
+        <button id="batchModeButton" type="button">Batch</button>
+      </nav>
+
+      <section id="singleView" class="mode-view">
+        <section class="workspace">
+          <form id="applicationForm" class="panel data-panel">
+            <div class="panel-head">
+              <h2>Application</h2>
+              <div class="panel-actions">
+                <select id="singleFixtureSelect" class="fixture-select" aria-label="Example fixture"></select>
+                <button id="loadSingleFixtureButton" type="button" class="ghost-button">Load Example</button>
+                <button type="submit">Save</button>
+              </div>
+            </div>
+            <div id="applicationSaveStatus" class="inline-status" role="status" aria-live="polite"></div>
+
+            <div class="derived-id-card">
+              <span>Application ID</span>
+              <strong id="derivedApplicationId">Choose an image to generate ID</strong>
+            </div>
+
+            <div class="grid-two">
+              <label>
+                Brand
+                <input id="brand" name="brand" autocomplete="off" required />
+              </label>
+              <label>
+                Class / Type
+                <input id="classType" name="classType" autocomplete="off" required />
+              </label>
+            </div>
+
+            <div class="grid-two">
+              <label>
+                Net Contents
+                <input id="netContents" name="netContents" autocomplete="off" required />
+              </label>
+              <label>
+                Alcohol Content
+                <input id="abv" name="abv" autocomplete="off" required />
+              </label>
+            </div>
+
+            <label>
+              Name and Address
+              <textarea id="nameAddress" name="nameAddress" rows="2" required></textarea>
+            </label>
+
+            <label>
+              Government Warning
+              <input id="governmentWarning" name="governmentWarning" autocomplete="off" required />
+            </label>
+          </form>
+
+          <section class="panel run-panel">
+            <div class="panel-head">
+              <h2>Verification</h2>
+              <button id="verifyButton" type="button">Run</button>
+            </div>
+
+            <div class="run-controls">
+              <label class="file-drop" for="labelImage">
+                <input id="labelImage" type="file" accept="image/png,image/jpeg,image/webp" />
+                <span id="fileName">Choose label image</span>
+              </label>
+
+              <div class="judge-compact">
+                <div class="judge-main">
+                  <label class="toggle-row">
+                    <input id="judgeEnabled" type="checkbox" />
+                    <span>AI Label Reader</span>
+                  </label>
+                  <select id="judgeMode">
+                    <option value="shadow">Compare only</option>
+                    <option value="override">Reconcile</option>
+                  </select>
+                </div>
+
+                <details class="judge-advanced">
+                  <summary>Reader settings</summary>
+                  <div class="reader-settings compact">
+                    <label>
+                      Timeout ms
+                      <input id="judgeTimeoutMs" type="number" min="100" max="5000" step="100" value="2500" />
+                    </label>
+                  </div>
+                  <fieldset class="judge-fields">
+                    <legend>Fields eligible for AI reconciliation</legend>
+                    <label><input type="checkbox" data-judge-field="single" value="brand" checked /> Brand</label>
+                    <label><input type="checkbox" data-judge-field="single" value="class_type" checked /> Class / Type</label>
+                    <label><input type="checkbox" data-judge-field="single" value="net_contents" /> Net Contents</label>
+                    <label><input type="checkbox" data-judge-field="single" value="abv" /> Alcohol Content</label>
+                    <label><input type="checkbox" data-judge-field="single" value="government_warning" /> Government Warning</label>
+                    <label><input type="checkbox" data-judge-field="single" value="name_address" /> Name and Address</label>
+                  </fieldset>
+                </details>
+                <div id="judgeRunStatus" class="judge-run-status">AI Label Reader scans the image in parallel with OCR, then selected failed fields can be reconciled.</div>
+              </div>
+            </div>
+
+            <div class="preview-frame">
+              <img id="imagePreview" alt="" />
+            </div>
+          </section>
+        </section>
+
+        <section class="results-band">
+          <div class="results-head">
+            <div>
+              <h2>Result</h2>
+              <p id="singleRunStamp" class="run-stamp">No verification run yet</p>
+            </div>
+            <div id="confidenceText">Confidence: --</div>
+          </div>
+          <div id="decisionGrid" class="decision-grid">
+            <div class="decision-card">
+              <span>Status</span>
+              <strong id="decisionStatus">No run</strong>
+            </div>
+            <div class="decision-card">
+              <span>Runtime</span>
+              <strong id="decisionRuntime">--</strong>
+            </div>
+            <div class="decision-card">
+              <span>Failed Fields</span>
+              <strong id="decisionFailed">--</strong>
+            </div>
+            <div class="decision-card">
+              <span>Highest Risk</span>
+              <strong id="decisionRisk">--</strong>
+            </div>
+            <div class="decision-card">
+              <span>AI Reader</span>
+              <strong id="decisionJudge">Off</strong>
+            </div>
+          </div>
+          <div id="summaryStrip" class="summary-strip"></div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Field</th>
+                  <th>Evidence</th>
+                  <th>Deterministic</th>
+                  <th>AI Reader</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody id="fieldsBody">
+                <tr>
+                  <td colspan="5" class="empty">No verification run yet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <section id="failedFieldsPanel" class="failed-fields-panel" hidden>
+            <div class="failed-fields-head">
+              <h2>Failed Checks</h2>
+              <span id="failedFieldsCount">0 failed</span>
+            </div>
+            <div id="failedFieldsList" class="failed-fields-list"></div>
+          </section>
+          <section id="fieldDetail" class="field-detail empty-detail">
+            <div class="detail-head">
+              <h2>Field Review</h2>
+              <span>Select a field row</span>
+            </div>
+            <div id="detailBody" class="detail-body"></div>
+          </section>
+          <pre id="rawJson" class="raw-json"></pre>
+        </section>
+      </section>
+
+      <section id="batchView" class="mode-view" hidden>
+        <section class="panel batch-panel">
+          <div class="panel-head">
+            <h2>Batch Verification</h2>
+            <div class="panel-actions">
+              <button id="loadBatchFixturesButton" type="button" class="ghost-button">Load Fixtures</button>
+              <button id="addBatchRowButton" type="button" class="ghost-button">Add Row</button>
+              <button id="runBatchButton" type="button">Run Batch</button>
+            </div>
+          </div>
+
+          <div class="batch-controls">
+            <label>
+              Max Concurrency
+              <input id="batchConcurrency" type="number" min="1" max="8" step="1" value="1" />
+            </label>
+            <div class="judge-compact">
+              <div class="judge-main">
+                <label class="toggle-row">
+                  <input id="batchJudgeEnabled" type="checkbox" />
+                  <span>AI Label Reader</span>
+                </label>
+                <select id="batchJudgeMode">
+                  <option value="shadow">Compare only</option>
+                  <option value="override">Reconcile</option>
+                </select>
+              </div>
+
+              <details class="judge-advanced">
+                <summary>Reader settings</summary>
+                <div class="reader-settings compact">
+                  <label>
+                    Timeout ms
+                    <input id="batchJudgeTimeoutMs" type="number" min="100" max="5000" step="100" value="2500" />
+                  </label>
+                </div>
+                <fieldset class="judge-fields">
+                  <legend>Fields eligible for AI reconciliation</legend>
+                  <label><input type="checkbox" data-judge-field="batch" value="brand" checked /> Brand</label>
+                  <label><input type="checkbox" data-judge-field="batch" value="class_type" checked /> Class / Type</label>
+                  <label><input type="checkbox" data-judge-field="batch" value="net_contents" /> Net Contents</label>
+                  <label><input type="checkbox" data-judge-field="batch" value="abv" /> Alcohol Content</label>
+                  <label><input type="checkbox" data-judge-field="batch" value="government_warning" /> Government Warning</label>
+                  <label><input type="checkbox" data-judge-field="batch" value="name_address" /> Name and Address</label>
+                </fieldset>
+              </details>
+            </div>
+          </div>
+
+          <div class="batch-note">
+            Up to 100 rows. Application IDs are generated from image filenames, for example `generated_bourbon_with_contents.png` becomes `generated-bourbon-with-contents`.
+          </div>
+
+          <div class="batch-table-wrap">
+            <table class="batch-table">
+              <thead>
+                <tr>
+                  <th>Row</th>
+                  <th>Application ID</th>
+                  <th>Image</th>
+                  <th>Status</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="batchRowsBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="results-band batch-results">
+          <div class="results-head">
+            <div>
+              <h2>Batch Result</h2>
+              <p id="batchRunStamp" class="run-stamp">No batch run yet</p>
+            </div>
+            <button id="downloadBatchButton" type="button" class="ghost-button" disabled>Download JSON</button>
+          </div>
+          <div class="decision-grid batch-summary-grid">
+            <div class="decision-card">
+              <span>Status</span>
+              <strong id="batchStatus">No run</strong>
+            </div>
+            <div class="decision-card">
+              <span>Records</span>
+              <strong id="batchCount">--</strong>
+            </div>
+            <div class="decision-card">
+              <span>Consistent</span>
+              <strong id="batchConsistent">--</strong>
+            </div>
+            <div class="decision-card">
+              <span>Flagged</span>
+              <strong id="batchFlagged">--</strong>
+            </div>
+            <div class="decision-card">
+              <span>Errors</span>
+              <strong id="batchErrors">--</strong>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Row</th>
+                  <th>Application</th>
+                  <th>Status</th>
+                  <th>Runtime</th>
+                  <th>Failed Fields</th>
+                </tr>
+              </thead>
+              <tbody id="batchResultsBody">
+                <tr>
+                  <td colspan="5" class="empty">No batch run yet</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <pre id="batchRawJson" class="raw-json"></pre>
+        </section>
+      </section>
+    </main>
+
+    <div id="manageModal" class="modal-overlay" hidden>
+      <div class="modal" role="dialog" aria-modal="true" aria-labelledby="manageModalTitle">
+        <div class="modal-head">
+          <h2 id="manageModalTitle">Manage Applications</h2>
+          <button id="manageModalClose" type="button" class="icon-button" aria-label="Close">✕</button>
+        </div>
+        <p class="modal-note">View and delete existing applications. Editing is done from the main form.</p>
+        <div class="manage-toolbar">
+          <label class="manage-select-all">
+            <input id="manageSelectAll" type="checkbox" />
+            <span>Select all</span>
+          </label>
+          <span id="manageSelectionCount" class="manage-selection-count">0 selected</span>
+          <button id="manageDeleteSelected" type="button" class="small-button danger" disabled>Delete Selected</button>
+        </div>
+        <ul id="manageList" class="manage-list">
+          <li class="manage-empty">Loading…</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="toastHost" class="toast-host" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>

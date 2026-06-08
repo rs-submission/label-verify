@@ -1,0 +1,20 @@
+[project]
+name = "labelverify-ocr"
+version = "0.1.0"
+description = "OCR service for alcohol label consistency verification"
+requires-python = ">=3.11,<3.15"
+dependencies = [
+    "fastapi>=0.124.0",
+    "httpx>=0.28.0",
+    "numpy>=2.2.0",
+    "opencv-python-headless>=4.12.0",
+    "pytest>=9.0.0",
+    "python-multipart>=0.0.20",
+    "rapidocr-onnxruntime>=1.4.4",
+    "uvicorn[standard]>=0.38.0",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["."]
+

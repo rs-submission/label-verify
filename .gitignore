@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+bin/
+*.env
+models/*.onnx
+/data/
+.cache/
+evals/reports/

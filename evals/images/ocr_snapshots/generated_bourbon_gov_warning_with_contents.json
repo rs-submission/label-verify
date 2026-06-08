@@ -1,0 +1,346 @@
+{
+  "image": "evals/images/generated_bourbon_gov_warning_with_contents.png",
+  "primary_elapsed_ms": 2307,
+  "rotated_elapsed_ms": 1380,
+  "final_elapsed_ms": 2899,
+  "primary_regions": [
+    {
+      "text": "POM",
+      "confidence": 0.9962952534357706,
+      "bbox": [
+        470.6904602050781,
+        1109.822509765625,
+        728.1189880371094,
+        247.193603515625
+      ]
+    },
+    {
+      "text": "BOURBON",
+      "confidence": 0.9958439724785941,
+      "bbox": [
+        488.35711669921875,
+        1358.290283203125,
+        683.9523315429688,
+        95.5645751953125
+      ]
+    },
+    {
+      "text": "DISTILLED FROM MASH",
+      "confidence": 0.9641540301473517,
+      "bbox": [
+        489.6190185546875,
+        1472.9677734375,
+        682.6904296875,
+        45.870849609375
+      ]
+    },
+    {
+      "text": "COUNTY,VAFROMHIGHESTQUALITYINGREDIENTS",
+      "confidence": 0.9771387655484048,
+      "bbox": [
+        449.2380676269531,
+        1572.3548583984375,
+        767.2381286621094,
+        36.9515380859375
+      ]
+    },
+    {
+      "text": "POMCREEKDISTILLINGCOMPANY,LLC",
+      "confidence": 0.97945544843016,
+      "bbox": [
+        490.88092041015625,
+        1619.5,
+        681.4285278320312,
+        42.04833984375
+      ]
+    },
+    {
+      "text": "PURCELLVILLE, VA",
+      "confidence": 0.9953009523451328,
+      "bbox": [
+        667.547607421875,
+        1662.822509765625,
+        326.83331298828125,
+        45.8709716796875
+      ]
+    },
+    {
+      "text": "45% ALC. BY VOL. (90 PROOF)",
+      "confidence": 0.9925473155798735,
+      "bbox": [
+        569.1190185546875,
+        1715.064453125,
+        522.4285888671875,
+        50.9677734375
+      ]
+    },
+    {
+      "text": "NET CONTENTS: 750 mL",
+      "confidence": 0.9881291210651397,
+      "bbox": [
+        617.0714111328125,
+        1800.4354248046875,
+        458.0714111328125,
+        48.41943359375
+      ]
+    }
+  ],
+  "primary_recovered_regions": [
+    {
+      "text": "POM",
+      "confidence": 0.9962952534357706,
+      "bbox": [
+        470.6904602050781,
+        1109.822509765625,
+        728.1189880371094,
+        247.193603515625
+      ]
+    },
+    {
+      "text": "BOURBON",
+      "confidence": 0.9958439724785941,
+      "bbox": [
+        488.35711669921875,
+        1358.290283203125,
+        683.9523315429688,
+        95.5645751953125
+      ]
+    },
+    {
+      "text": "DISTILLED FROM MASH",
+      "confidence": 0.9641540301473517,
+      "bbox": [
+        489.6190185546875,
+        1472.9677734375,
+        682.6904296875,
+        45.870849609375
+      ]
+    },
+    {
+      "text": "COUNTY,VAFROMHIGHESTQUALITYINGREDIENTS",
+      "confidence": 0.9771387655484048,
+      "bbox": [
+        449.2380676269531,
+        1572.3548583984375,
+        767.2381286621094,
+        36.9515380859375
+      ]
+    },
+    {
+      "text": "POMCREEKDISTILLINGCOMPANY,LLC",
+      "confidence": 0.97945544843016,
+      "bbox": [
+        490.88092041015625,
+        1619.5,
+        681.4285278320312,
+        42.04833984375
+      ]
+    },
+    {
+      "text": "PURCELLVILLE, VA",
+      "confidence": 0.9953009523451328,
+      "bbox": [
+        667.547607421875,
+        1662.822509765625,
+        326.83331298828125,
+        45.8709716796875
+      ]
+    },
+    {
+      "text": "45% ALC. BY VOL. (90 PROOF)",
+      "confidence": 0.9925473155798735,
+      "bbox": [
+        569.1190185546875,
+        1715.064453125,
+        522.4285888671875,
+        50.9677734375
+      ]
+    },
+    {
+      "text": "NET CONTENTS: 750 mL",
+      "confidence": 0.9881291210651397,
+      "bbox": [
+        617.0714111328125,
+        1800.4354248046875,
+        458.0714111328125,
+        48.41943359375
+      ]
+    }
+  ],
+  "rotated_regions": [
+    {
+      "text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHIES DURING PREGNANCY",
+      "confidence": 0.9802032579790871,
+      "bbox": [
+        1570.4921875,
+        85.37096405029297,
+        46.6171875,
+        2329.225715637207
+      ]
+    },
+    {
+      "text": "ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTI)IA BVERAIRS YOIVUUR ABILITY TO",
+      "confidence": 0.9824732111281708,
+      "bbox": [
+        1515.5078125,
+        86.64515686035156,
+        46.6171875,
+        2329.2256927490234
+      ]
+    },
+    {
+      "text": "OPERATEYOUR DRIVE A CAR MACHINERY, AND MAY HEAILTH PROBLEMS",
+      "confidence": 0.926737951020063,
+      "bbox": [
+        1464.109375,
+        87.91934967041016,
+        41.8359375,
+        1227.0484237670898
+      ]
+    }
+  ],
+  "rotated_recovered_regions": [
+    {
+      "text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHIES DURING PREGNANCY",
+      "confidence": 0.9802032579790871,
+      "bbox": [
+        1570.4921875,
+        85.37096405029297,
+        46.6171875,
+        2329.225715637207
+      ]
+    },
+    {
+      "text": "ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTI)IA BVERAIRS YOIVUUR ABILITY TO",
+      "confidence": 0.9824732111281708,
+      "bbox": [
+        1515.5078125,
+        86.64515686035156,
+        46.6171875,
+        2329.2256927490234
+      ]
+    },
+    {
+      "text": "OPERATEYOUR DRIVE A CAR MACHINERY, AND MAY HEAILTH PROBLEMS",
+      "confidence": 0.926737951020063,
+      "bbox": [
+        1464.109375,
+        87.91934967041016,
+        41.8359375,
+        1227.0484237670898
+      ]
+    }
+  ],
+  "final_regions": [
+    {
+      "text": "POM",
+      "confidence": 0.9962952534357706,
+      "bbox": [
+        470.6904602050781,
+        1109.822509765625,
+        728.1189880371094,
+        247.193603515625
+      ]
+    },
+    {
+      "text": "BOURBON",
+      "confidence": 0.9958439724785941,
+      "bbox": [
+        488.35711669921875,
+        1358.290283203125,
+        683.9523315429688,
+        95.5645751953125
+      ]
+    },
+    {
+      "text": "DISTILLED FROM MASH",
+      "confidence": 0.9641540301473517,
+      "bbox": [
+        489.6190185546875,
+        1472.9677734375,
+        682.6904296875,
+        45.870849609375
+      ]
+    },
+    {
+      "text": "COUNTY,VAFROMHIGHESTQUALITYINGREDIENTS",
+      "confidence": 0.9771387655484048,
+      "bbox": [
+        449.2380676269531,
+        1572.3548583984375,
+        767.2381286621094,
+        36.9515380859375
+      ]
+    },
+    {
+      "text": "POMCREEKDISTILLINGCOMPANY,LLC",
+      "confidence": 0.97945544843016,
+      "bbox": [
+        490.88092041015625,
+        1619.5,
+        681.4285278320312,
+        42.04833984375
+      ]
+    },
+    {
+      "text": "PURCELLVILLE, VA",
+      "confidence": 0.9953009523451328,
+      "bbox": [
+        667.547607421875,
+        1662.822509765625,
+        326.83331298828125,
+        45.8709716796875
+      ]
+    },
+    {
+      "text": "45% ALC. BY VOL. (90 PROOF)",
+      "confidence": 0.9925473155798735,
+      "bbox": [
+        569.1190185546875,
+        1715.064453125,
+        522.4285888671875,
+        50.9677734375
+      ]
+    },
+    {
+      "text": "NET CONTENTS: 750 mL",
+      "confidence": 0.9881291210651397,
+      "bbox": [
+        617.0714111328125,
+        1800.4354248046875,
+        458.0714111328125,
+        48.41943359375
+      ]
+    },
+    {
+      "text": "GOVERNMENT WARNING: (1) ACCORDING TO THE SURGEON GENERAL, WOMEN SHOULD NOT DRINK ALCOHIES DURING PREGNANCY",
+      "confidence": 0.9802032579790871,
+      "bbox": [
+        1570.4921875,
+        85.37096405029297,
+        46.6171875,
+        2329.225715637207
+      ]
+    },
+    {
+      "text": "ALCOHOLIC BEVERAGES DURING PREGNANCY BECAUSE OF THE RISK OF BIRTH DEFECTS. (2) CONSUMPTI)IA BVERAIRS YOIVUUR ABILITY TO",
+      "confidence": 0.9824732111281708,
+      "bbox": [
+        1515.5078125,
+        86.64515686035156,
+        46.6171875,
+        2329.2256927490234
+      ]
+    },
+    {
+      "text": "OPERATEYOUR DRIVE A CAR MACHINERY, AND MAY HEAILTH PROBLEMS",
+      "confidence": 0.926737951020063,
+      "bbox": [
+        1464.109375,
+        87.91934967041016,
+        41.8359375,
+        1227.0484237670898
+      ]
+    }
+  ]
+}
